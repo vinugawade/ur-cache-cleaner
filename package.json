@@ -14,6 +14,57 @@
   ],
   "main": "./extension.js",
   "contributes": {
+    "icons": {
+      "clear-cache": {
+        "description": "Clear cache icon",
+        "default": {
+          "fontPath": "./icon/fonts/ur-font.woff",
+          "fontCharacter": "\\43"
+        }
+      },
+      "loading-icon": {
+        "description": "Loading icon",
+        "default": {
+          "fontPath": "./icon/fonts/ur-font.woff",
+          "fontCharacter": "\\4f"
+        }
+      },
+      "info-icon": {
+        "description": "Info icon",
+        "default": {
+          "fontPath": "./icon/fonts/ur-font.woff",
+          "fontCharacter": "\\49"
+        }
+      },
+      "apple-icon": {
+        "description": "Apple system icon",
+        "default": {
+          "fontPath": "./icon/fonts/ur-font.woff",
+          "fontCharacter": "\\41"
+        }
+      },
+      "unix-icon": {
+        "description": "Unix system icon",
+        "default": {
+          "fontPath": "./icon/fonts/ur-font.woff",
+          "fontCharacter": "\\75"
+        }
+      },
+      "windows-icon": {
+        "description": "Wiindows system icon",
+        "default": {
+          "fontPath": "./icon/fonts/ur-font.woff",
+          "fontCharacter": "\\77"
+        }
+      },
+      "code-icon": {
+        "description": "Code icon",
+        "default": {
+          "fontPath": "./icon/fonts/ur-font.woff",
+          "fontCharacter": "\\48"
+        }
+      }
+    },
     "commands": [
       {
         "command": "ur-cache-cleaner.clearDrupalCache",
