@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode
 const vscode = require('vscode');
 const fs = require('fs');
+const cmdRunner = require('child_process');
 const commandExists = require('command-exists');
 
 
@@ -9,34 +9,54 @@ const commandExists = require('command-exists');
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-	// invoked without a callback, it returns a promise
+	var drushVersion;
+
+	// Create a new status bar item that we can now manage.
+	const extStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
+	const extCommandId = 'ur-cache-cleaner.clearCache';
+	extStatusBarItem.command = extCommandId;
+	extStatusBarItem.name = `clear-cache`;
+
+	// Default paths.
+	const root = vscode.workspace.rootPath;
+	const drushDir = root + '/vendor/drush/drush';
+	const version = drushDir + '/drush version';
+	const cacheRebuild = drushDir + '/drush cr';
+
+	// Get gloabbly installed drush version.
 	commandExists('drush')
 		.then(function () {
-			const extCommandId = 'ur-cache-cleaner.clearCache';
-			var disposable = vscode.commands.registerCommand(extCommandId, function () {
-				// The code you place here will be executed every time your command is executed
+			cmdRunner.exec(version, (exps, stdout, stderr) => {
+				if (stderr) {
+					vscode.window.showErrorMessage('Drush error: ' + stderr);
+				}
+				if (exps) {
+					vscode.window.showErrorMessage('Exception:' + exps);
+				}
+				if (stdout) {
+					drushVersion = stdout.split(':')[1].trim();
+					extStatusBarItem.text = `$(clear-cache)  Drupal`;
+					extStatusBarItem.tooltip = `Clear Cache (Drush ${drushVersion})`;
+				}
 			});
+
+			const disposable = vscode.commands.registerCommand(extCommandId, function () {
+			});
+
 			context.subscriptions.push(disposable);
 
-			// create a new status bar item that we can now manage
-			var extStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
-			extStatusBarItem.command = extCommandId;
-			extStatusBarItem.text = `$(clear-cache)  Clear Cache (Drupal)`;
-
-			var root = vscode.workspace.rootPath;
-			var dir = root + '/vendor/drush';
-			fs.access(dir, err => {
+			fs.access(drushDir, err => {
 				if (err) {
 					vscode.window.showErrorMessage(`Please add Drush with Composer to your project. Run 'cd "${root}" and Run "composer require drush/drush" to install'`);
-					// Debug
 					console.log(`Please add Drush with Composer to your project. Run 'cd "${root}" and Run "composer require drush/drush" to install'`)
 				} else {
 					extStatusBarItem.show();
 				}
 			})
+
 			context.subscriptions.push(extStatusBarItem);
 		}).catch(function () {
-			vscode.window.showInformationMessage('Drush is not installed!, Please install drush globally on your system.');
+			vscode.window.showErrorMessage('Drush is not installed, Please install drush globally on your system.');
 		});
 }
 
