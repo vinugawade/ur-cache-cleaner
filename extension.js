@@ -41,6 +41,32 @@ function activate(context) {
 			});
 
 			const disposable = vscode.commands.registerCommand(extCommandId, function () {
+				// Change text while clearing cache.
+				extStatusBarItem.tooltip = `Clearing Cache`;
+				extStatusBarItem.text = `$(sync~spin) Drupal`;
+
+				// Execute clear cache command.
+				cmdRunner.exec(cacheRebuild, (exps, stdout, stderr) => {
+					if (stderr) {
+						let successMsg = stderr.trim();
+						if (successMsg == "[success] Cache rebuild complete.") {
+							extStatusBarItem.text = `$(clear-cache) Clear Cache`;
+							extStatusBarItem.tooltip = `Drupal (Drush ${drushVersion})`;
+							vscode.window.showInformationMessage(successMsg);
+							console.log(successMsg);
+						} else {
+							vscode.window.showErrorMessage('Drush error: ' + stderr);
+							console.log(stderr);
+						}
+					}
+					if (exps) {
+						vscode.window.showErrorMessage('Exception:' + exps);
+						console.log(exps);
+					}
+					if (stdout) {
+						vscode.window.showInformationMessage('stdout: ' + stdout);
+					}
+				});
 			});
 
 			context.subscriptions.push(disposable);
