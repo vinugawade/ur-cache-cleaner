@@ -28,10 +28,7 @@ function activate(context) {
 		.then(function () {
 			// @todo Ask for drush path in notification.
 			fs.access(drushDir, err => {
-				if (err) {
-					//  @todo Prevent showing drush not found error in other project.
-					throw 'drushNotFound';
-				} else {
+				if (!err) {
 					cmdRunner.exec(version, (exps, stdout, stderr) => {
 						if (stderr) {
 							vscode.window.showErrorMessage('Drush error: ' + stderr);
@@ -59,8 +56,6 @@ function activate(context) {
 					if (stderr) {
 						let successMsg = stderr.trim();
 						if (successMsg == "[success] Cache rebuild complete.") {
-							extStatusBarItem.text = `$(clear-cache) Clear Cache`;
-							extStatusBarItem.tooltip = `Drupal (Drush ${drushVersion})`;
 							vscode.window.showInformationMessage(successMsg);
 							console.log(successMsg);
 						} else {
@@ -75,18 +70,15 @@ function activate(context) {
 					if (stdout) {
 						vscode.window.showInformationMessage('stdout: ' + stdout);
 					}
+					extStatusBarItem.text = `$(clear-cache) Clear Cache`;
+					extStatusBarItem.tooltip = `Drupal (Drush ${drushVersion})`;
 				});
 			});
 
 			context.subscriptions.push(disposable);
 			context.subscriptions.push(extStatusBarItem);
-		}).catch(function (exp) {
-			if (exp == "drushNotFound") {
-				vscode.window.showErrorMessage(`Please add Drush with Composer to your project. Run 'cd "${root}" and Run "composer require drush/drush" for install drush in your project'`);
-				console.log(`Please add Drush with Composer to your project. Run 'cd "${root}" and Run "composer require drush/drush" for install drush in your project'`);
-			}else{
-				vscode.window.showErrorMessage('Drush is not installed, Please install drush globally on your system.');
-			}
+		}).catch(function () {
+			vscode.window.showErrorMessage('Drush is not installed, Please install drush globally on your system.');
 		});
 }
 
