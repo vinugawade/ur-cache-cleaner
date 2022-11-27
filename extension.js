@@ -23,7 +23,7 @@ function activate(context) {
 	const version = drushDir + '/drush version';
 	const cacheRebuild = drushDir + '/drush cr';
 
-	// Get gloably installed drush version.
+	// Get globally installed drush version.
 	commandExists('drush')
 		.then(function () {
 			// @todo Ask for drush path in notification.
