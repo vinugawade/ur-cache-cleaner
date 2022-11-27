@@ -13,13 +13,11 @@
   "categories": [
     "Other"
   ],
+  "preview": true,
   "activationEvents": [
-    "onStartupFinished",
-    "onLanguage:php",
-    "workspaceContains:**/drush.php",
-    "onCommand:ur-cache-cleaner.clearCache"
+    "workspaceContains:**/composer.json"
   ],
-  "main": "./extension.js",
+  "main": "./src/extension.js",
   "contributes": {
     "icons": {
       "clear-cache": {
@@ -74,8 +72,8 @@
     },
     "commands": [
       {
-        "command": "ur-cache-cleaner.clearCache",
-        "title": "Clear Cache"
+        "command": "ur-cache-cleaner.drushClearCache",
+        "title": "Drush Clear Cache"
       }
     ]
   },
