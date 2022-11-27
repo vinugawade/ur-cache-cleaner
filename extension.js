@@ -23,22 +23,31 @@ function activate(context) {
 	const version = drushDir + '/drush version';
 	const cacheRebuild = drushDir + '/drush cr';
 
-	// Get gloabbly installed drush version.
+	// Get gloably installed drush version.
 	commandExists('drush')
 		.then(function () {
-			cmdRunner.exec(version, (exps, stdout, stderr) => {
-				if (stderr) {
-					vscode.window.showErrorMessage('Drush error: ' + stderr);
+			// @todo Ask for drush path in notification.
+			fs.access(drushDir, err => {
+				if (err) {
+					//  @todo Prevent showing drush not found error in other project.
+					throw 'drushNotFound';
+				} else {
+					cmdRunner.exec(version, (exps, stdout, stderr) => {
+						if (stderr) {
+							vscode.window.showErrorMessage('Drush error: ' + stderr);
+						}
+						if (exps) {
+							vscode.window.showErrorMessage('Exception:' + exps);
+						}
+						if (stdout) {
+							drushVersion = stdout.split(':')[1].trim();
+							extStatusBarItem.text = `$(clear-cache)  Drupal`;
+							extStatusBarItem.tooltip = `Clear Cache (Drush ${drushVersion})`;
+						}
+					});
+					extStatusBarItem.show();
 				}
-				if (exps) {
-					vscode.window.showErrorMessage('Exception:' + exps);
-				}
-				if (stdout) {
-					drushVersion = stdout.split(':')[1].trim();
-					extStatusBarItem.text = `$(clear-cache)  Drupal`;
-					extStatusBarItem.tooltip = `Clear Cache (Drush ${drushVersion})`;
-				}
-			});
+			})
 
 			const disposable = vscode.commands.registerCommand(extCommandId, function () {
 				// Change text while clearing cache.
@@ -70,19 +79,14 @@ function activate(context) {
 			});
 
 			context.subscriptions.push(disposable);
-
-			fs.access(drushDir, err => {
-				if (err) {
-					vscode.window.showErrorMessage(`Please add Drush with Composer to your project. Run 'cd "${root}" and Run "composer require drush/drush" to install'`);
-					console.log(`Please add Drush with Composer to your project. Run 'cd "${root}" and Run "composer require drush/drush" to install'`)
-				} else {
-					extStatusBarItem.show();
-				}
-			})
-
 			context.subscriptions.push(extStatusBarItem);
-		}).catch(function () {
-			vscode.window.showErrorMessage('Drush is not installed, Please install drush globally on your system.');
+		}).catch(function (exp) {
+			if (exp == "drushNotFound") {
+				vscode.window.showErrorMessage(`Please add Drush with Composer to your project. Run 'cd "${root}" and Run "composer require drush/drush" for install drush in your project'`);
+				console.log(`Please add Drush with Composer to your project. Run 'cd "${root}" and Run "composer require drush/drush" for install drush in your project'`);
+			}else{
+				vscode.window.showErrorMessage('Drush is not installed, Please install drush globally on your system.');
+			}
 		});
 }
 
