@@ -18,6 +18,10 @@ function activate(context) {
 	extStatusBarItem.name = `clear-cache`;
 
 	// Default paths.
+	const	drush_global_path = vscode.workspace.getConfiguration().get('Drush.GlobalPath');
+	if (drush_global_path) {
+		console.log(drush_global_path);
+	}
 	const root = vscode.workspace.rootPath;
 	const drushDir = root + '/vendor/drush/drush';
 	const version = drushDir + '/drush version';
@@ -39,7 +43,7 @@ function activate(context) {
 						if (stdout) {
 							drushVersion = stdout.split(':')[1].trim();
 							extStatusBarItem.text = `$(clear-cache)  Drupal`;
-							extStatusBarItem.tooltip = `Clear Cache (Drush ${drushVersion})`;
+							extStatusBarItem.tooltip = `Clear Cache (Drush ${drush_global_path})`;
 						}
 					});
 					extStatusBarItem.show();
@@ -71,7 +75,7 @@ function activate(context) {
 						vscode.window.showInformationMessage('stdout: ' + stdout);
 					}
 					extStatusBarItem.text = `$(clear-cache) Clear Cache`;
-					extStatusBarItem.tooltip = `Drupal (Drush ${drushVersion})`;
+					extStatusBarItem.tooltip = `Drupal (Drush ${drush_global_path})`;
 				});
 			});
 

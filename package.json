@@ -77,7 +77,17 @@
         "command": "ur-cache-cleaner.clearCache",
         "title": "Clear Cache"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "UR Cache Cleaner",
+      "properties": {
+        "Drush.GlobalPath": {
+          "type": "string",
+          "default": "/usr/bin/drush",
+          "description": "Add absolute path of globally installed drush."
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
