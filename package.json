@@ -76,6 +76,13 @@
         "command": "ur-cache-cleaner.drushClearCache",
         "title": "Drush Clear Cache"
       }
+    ],
+    "keybindings": [
+        {
+            "command": "ur-cache-cleaner.drushClearCache",
+            "key": "ctrl+c ctrl+r",
+            "mac": "cmd+c cmd+r"
+        }
     ]
   },
   "scripts": {
