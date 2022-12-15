@@ -1,12 +1,17 @@
 {
   "name": "ur-cache-cleaner",
   "displayName": "UR Cache Cleaner",
-  "description": "Clear cache from CMS like Drupal.",
-  "publisher": "Clear cache from CMS like Drupal.",
+  "description": "Clear cache from CMS like Drupal build for Linux/Mac OS.",
+  "publisher": "Vinay Gawade.",
   "author": {
     "name": "Vinay Gawade"
   },
-  "icon": "assets/images/logo.png",
+  "icon": "assets/images/logo-transparent.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinugawade/ur-cache-cleaner.git"
+  },
+  "license": "GNU General Public License",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.72.0"
@@ -104,14 +109,9 @@
   "dependencies": {
     "command-exists": "^1.2.9"
   },
-  "license": "",
   "bugs": {
     "url": "https://github.com/vinugawade/ur-cache-cleaner/issues",
     "email": "vinulike11@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vinugawade/ur-cache-cleaner.git"
   },
   "homepage": "https://github.com/vinugawade/ur-cache-cleaner/blob/master/README.md"
 }

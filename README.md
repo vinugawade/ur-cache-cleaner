@@ -4,21 +4,26 @@
   <br>
 </h1>
 
-# UR Cache Cleaner
-
-`UR Cache Cleaner` is a VS Code extension which helps you to clear your `CMS(Drupal)` project's `Cache` with single click of a `Button` without switching to `Admin Panel` or `Terminal`.
+# **UR Cache Cleaner** ![GitHub package.json version](https://img.shields.io/github/package-json/v/vinugawade/ur-cache-cleaner?style=flat-square) ![GitHub Repo stars](https://img.shields.io/github/stars/vinugawade/ur-cache-cleaner?color=yellow&style=flat-square) ![GitHub forks](https://img.shields.io/github/forks/vinugawade/ur-cache-cleaner?color=white&style=flat-square)
 
 ## Features ✨
 
-Describe specific features of your enxtension including screenshots of your extension in action. Image paths are relative to this README file.
+**UR Cache Cleaner** is a VS Code extension which helps you to **Clear Cache** of your **Drupal** project with single click of a **Button** without switching to **Admin Panel** or **Terminal** build for **Linux/Mac** OS.
 
-For example if there is an image subfolder under your extension project workspace:
+### Shortcut keys
 
-![Clear Your Cache](assets/images/feature-x.png)
+- Mac :- **⌘+C ⌘+R**
+- Linux :- **Ctrl+C Ctrl+R**
+
+For example if you open Drupal project, Then you can see the **Clear Cache** button at the left side of **Status Bar** :
+
+![Clear Your Cache](assets/images/feature.gif)
 
 ---
 
 ## Known Issues
+
+- This extension can't be use on windows system.
 
 Feel free to add any issues under our [repository](https://github.com/vinugawade/ur-cache-cleaner/issues).
 
@@ -34,7 +39,7 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ### 1.0.0
 
-Initial release for `Clear Cache` of `Drupal` projects.
+Initial release for **Clear Cache** of **Drupal** projects on **Linux/Mac** OS.
 
 ---
 
@@ -51,15 +56,18 @@ Feel free to contribute in our [repository](https://github.com/vinugawade/ur-cac
 
 ---
 
+## Maintainer ✨
+
+Built with 💛 by [Vinay Gawade](https://github.com/vinugawade).
+
+<a href="https://www.linkedin.com/in/vinu-gawade" target="_blank"><img src="assets/images/media/LinkedIn.png" alt="logo" width="150"></a>
+<a href="https://twitter.com/VinuGawade" target="_blank"><img src="assets/images/media/Twitter.png" alt="logo" width="150"></a>
+
+---
+
 ## License
 
 See [LICENSE](LICENSE).
 
----
+![LICENSE](https://img.shields.io/github/license/vinugawade/ur-cache-cleaner?style=flat-square)
 
-## Maintainer ✨
-
-Built with 💛 by Vinay Gawade.
-
-<a href="https://www.linkedin.com/in/vinu-gawade" target="_blank"><img src="assets/images/media/LinkedIn.png" alt="logo" width="150"></a>
-<a href="https://twitter.com/VinuGawade" target="_blank"><img src="assets/images/media/Twitter.png" alt="logo" width="150"></a>
