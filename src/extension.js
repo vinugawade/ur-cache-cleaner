@@ -29,16 +29,16 @@ function activate(context) {
 			}
 			if (stdout) {
 				drushVersion = stdout.split(':')[1].trim();
-				extStatusBarItem.text = `$(clear-cache)  Drupal`;
-				extStatusBarItem.tooltip = `Clear Cache (${drush.title} ${drushVersion})`;
+				extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
+				extStatusBarItem.tooltip = `Drupal (${drush.title} ${drushVersion})`;
 			}
 		});
 		extStatusBarItem.show();
 
 		const disposable = vscode.commands.registerCommand(extDrushButtonId, function () {
 			// Change text while clearing cache.
-			extStatusBarItem.tooltip = `Clearing Cache`;
-			extStatusBarItem.text = `$(sync~spin)  Drupal`;
+			extStatusBarItem.text = `$(sync~spin)  Clearing Cache`;
+			extStatusBarItem.tooltip = `Working on...`;
 			// Execute clear cache command.
 			drush.clearCache(extStatusBarItem, drushVersion);
 		});

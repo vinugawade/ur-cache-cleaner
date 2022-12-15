@@ -22,8 +22,8 @@ function clearCache(extStatusBarItem, drushVersion) {
 				vscode.window.showInformationMessage(successMsg);
 				console.log(successMsg);
 
-				extStatusBarItem.text = `$(clear-cache)  Drupal`;
-				extStatusBarItem.tooltip = `Clear Cache (${title} ${drushVersion})`;
+				extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
+				extStatusBarItem.tooltip = `Drupal (${title} ${drushVersion})`;
 			} else {
 				vscode.window.showErrorMessage('${title} error: ' + stderr);
 				console.log(stderr);
