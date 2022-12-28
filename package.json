@@ -85,8 +85,8 @@
     "keybindings": [
         {
             "command": "ur-cache-cleaner.drushClearCache",
-            "key": "ctrl+c ctrl+r",
-            "mac": "cmd+c cmd+r"
+            "key": "ctrl+shift+c ctrl+shift+r",
+            "mac": "cmd+shift+c cmd+shift+r"
         }
     ]
   },

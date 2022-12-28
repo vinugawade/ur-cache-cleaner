@@ -18,7 +18,7 @@ function clearCache(extStatusBarItem, drushVersion) {
 	cmdRunner.exec(cr, (exps, stdout, stderr) => {
 		if (stderr) {
 			let output = stderr.trim();
-			if (output == successMsg) {
+			if (output.includes(successMsg)) {
 				vscode.window.showInformationMessage(successMsg);
 				console.log(successMsg);
 
