@@ -12,7 +12,7 @@
 
 ### Shortcut keys
 
-- Mac :- **⌘+Shift+C ⌘+Shift+R**
+- Mac :- **⇧+⌘+C ⇧+⌘+R**
 - Linux :- **Ctrl+Shift+C Ctrl+Shift+R**
 
 For example if you open Drupal project, Then you can see the **Clear Cache** button at the left side of **Status Bar** :
