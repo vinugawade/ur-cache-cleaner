@@ -57,9 +57,7 @@ Built with 💛 by [Vinay Gawade](https://github.com/vinugawade).
 <a href="https://twitter.com/VinuGawade" target="_blank"><img src="assets/images/media/Bmc.png" alt="logo" width="150"></a>
 <a href="https://twitter.com/VinuGawade" target="_blank"><img src="assets/images/media/Twitter.png" alt="logo" width="150"></a>
 
-<div align="center">
-  <a href="https://www.buymeacoffee.com/vinaygawade" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-</div>
+<a href="https://www.buymeacoffee.com/vinaygawade" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ---
 
@@ -75,4 +73,3 @@ Built with 💛 by [Vinay Gawade](https://github.com/vinugawade).
 Check [here](LICENSE).
 
 ![LICENSE](https://img.shields.io/github/license/vinugawade/ur-cache-cleaner?style=flat-square)
-
