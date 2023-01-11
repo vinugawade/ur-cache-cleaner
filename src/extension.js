@@ -15,19 +15,22 @@ function activate(context) {
 	const result = check.command(drush);
 
 	if (typeof (result) !== 'string') {
+		// Assign values of status bar button.
 		const extDrushButtonId = 'ur-cache-cleaner.drushClearCache';
-
 		extStatusBarItem.command = extDrushButtonId;
 		extStatusBarItem.name = `drush-clear-cache`;
 
 		cmdRunner.exec(drush.version, (exps, stdout, stderr) => {
 			if (stderr) {
+				// Show command error.
 				vscode.window.showErrorMessage(`${drush.title} error: ` + stderr);
 			}
 			if (exps) {
+				// Show command exception.
 				vscode.window.showErrorMessage(`${drush.title}: ` + exps);
 			}
 			if (stdout) {
+				// Get drush version from command output.
 				drushVersion = stdout.split(':')[1].trim();
 				extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
 				extStatusBarItem.tooltip = `Drupal (${drush.title} ${drushVersion})`;
@@ -46,6 +49,7 @@ function activate(context) {
 		context.subscriptions.push(disposable);
 		context.subscriptions.push(extStatusBarItem);
 	} else {
+		// Show command not found error message.
 		vscode.window.showErrorMessage(result);
 	}
 

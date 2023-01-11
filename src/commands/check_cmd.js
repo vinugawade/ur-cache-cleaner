@@ -1,5 +1,4 @@
 const commandExists = require('command-exists').sync;
-const fs = require('fs');
 
 /**
  * @param {object} cmd
@@ -7,13 +6,9 @@ const fs = require('fs');
 exports.command = (cmd) => {
   var result;
   if (commandExists(cmd.name)) {
-    fs.access(cmd.path, err => {
-      if (!err) {
-        result = true;
-      }
-    });
+    result = true;
   } else {
-    result = `${cmd.title} is not installed, Please install globally on your system.`;
+    result = `${cmd.title} launcher is not installed, Please install it globally on your system.`;
   }
   return result;
 }
