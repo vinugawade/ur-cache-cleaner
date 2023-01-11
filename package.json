@@ -19,7 +19,7 @@
   "categories": [
     "Other"
   ],
-  "preview": true,
+  "preview": false,
   "activationEvents": [
     "workspaceContains:**/composer.json"
   ],
