@@ -6,7 +6,7 @@ const fs = require('fs');
 const title = "Drush";
 const name = "drush";
 const root = vscode.workspace.rootPath;
-const version = name + ' version';
+const version = name + ' version --root=' + root;
 const successMsg = "[success] Cache rebuild complete.";
 var cacheRebuild = "drush > /dev/null";
 
