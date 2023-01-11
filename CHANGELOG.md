@@ -1,5 +1,9 @@
-# Change Log
+# Change Logs
 
-## [1.0.0]
+## 1.0.0 :-
 
-Initial release for **Clear Cache** of **Drupal** projects on **Linux/Mac** OS.
+Enables **Clear Cache** command of **Drush** to used in **Drupal** projects, Only works on **Linux/Mac** OS.
+
+## 1.1.0 :-
+
+Enables **Clear Cache** command's support for **DDEV** drupal project environment.
