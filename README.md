@@ -8,14 +8,14 @@
 
 ## Features ✨
 
-**UR Cache Cleaner** is a VS Code extension which helps you to **Clear Cache** of your **Drupal** project with single click of a **Button** without switching to **Admin Panel** or **Terminal** build for **Linux/Mac** OS.
+**UR Cache Cleaner** is a VS Code extension which helps you to **Clear Cache** of your **Drupal** project with single click of a **Button** without switching to **Admin Panel** or **Terminal**. Only build for **Linux/Mac** OS.
 
 ### Shortcut keys
 
 - Mac :- **⇧+⌘+C ⇧+⌘+R**
 - Linux :- **Ctrl+Shift+C Ctrl+Shift+R**
 
-For example if you open Drupal project, Then you can see the **Clear Cache** button at the left side of **Status Bar** :
+For example if you open **Drupal project**, Then you can see the **Clear Cache** button at the left side of **Status Bar** :
 
 ![Clear Your Cache](assets/images/feature.gif)
 
@@ -23,7 +23,7 @@ For example if you open Drupal project, Then you can see the **Clear Cache** but
 
 ## Known Issues
 
-- This extension can't be use on windows system.
+- Not build for windows OS.
 
 Feel free to add any issues under our [repository](https://github.com/vinugawade/ur-cache-cleaner/issues).
 
@@ -39,13 +39,27 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ### 1.0.0
 
-Initial release for **Clear Cache** of **Drupal** projects on **Linux/Mac** OS.
+Enables **Clear Cache** command of **Drush** to used in **Drupal** projects, Only works on **Linux/Mac** OS.
 
 ---
 
 ## Contributors ✨
 
 Feel free to contribute in our [repository](https://github.com/vinugawade/ur-cache-cleaner).
+
+---
+
+## Maintainer ✨
+
+Built with 💛 by [Vinay Gawade](https://github.com/vinugawade).
+
+<a href="https://www.linkedin.com/in/vinu-gawade" target="_blank"><img src="assets/images/media/LinkedIn.png" alt="logo" width="150"></a>
+<a href="https://twitter.com/VinuGawade" target="_blank"><img src="assets/images/media/Bmc.png" alt="logo" width="150"></a>
+<a href="https://twitter.com/VinuGawade" target="_blank"><img src="assets/images/media/Twitter.png" alt="logo" width="150"></a>
+
+<div align="center">
+  <a href="https://www.buymeacoffee.com/vinaygawade" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+</div>
 
 ---
 
@@ -56,18 +70,9 @@ Feel free to contribute in our [repository](https://github.com/vinugawade/ur-cac
 
 ---
 
-## Maintainer ✨
-
-Built with 💛 by [Vinay Gawade](https://github.com/vinugawade).
-
-<a href="https://www.linkedin.com/in/vinu-gawade" target="_blank"><img src="assets/images/media/LinkedIn.png" alt="logo" width="150"></a>
-<a href="https://twitter.com/VinuGawade" target="_blank"><img src="assets/images/media/Twitter.png" alt="logo" width="150"></a>
-
----
-
 ## License
 
-See [LICENSE](LICENSE).
+Check [here](LICENSE).
 
 ![LICENSE](https://img.shields.io/github/license/vinugawade/ur-cache-cleaner?style=flat-square)
 
