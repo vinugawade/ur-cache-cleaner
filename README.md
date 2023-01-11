@@ -21,7 +21,13 @@ For example if you open **Drupal project**, Then you can see the **Clear Cache**
 
 ---
 
-## Known Issues
+## Requirements ✨
+
+- Install [Drush Launcher](https://github.com/drush-ops/drush-launcher) on your system.
+
+---
+
+## Known Issues ✨
 
 - Not build for windows OS.
 
@@ -29,13 +35,13 @@ Feel free to add any issues under our [repository](https://github.com/vinugawade
 
 ---
 
-## Changelog
+## Changelog ✨
 
 See [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
-## Release Notes
+## Release Notes ✨
 
 ### 1.0.0
 
