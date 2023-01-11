@@ -9,4 +9,5 @@
 - Enables **Clear Cache** command's support for **DDEV** drupal project environment.
 - Fixed minor issues and added comments.
 - Updated the **Readme** file.
+- Added **Keywords** to **package.json** file.
 - Removed extension from **Preview**.
