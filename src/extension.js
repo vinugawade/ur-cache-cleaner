@@ -27,16 +27,16 @@ function activate(context) {
 			}
 			if (exps) {
 				// Show command exception.
-				vscode.window.showErrorMessage(`${drush.title}: ` + exps);
+				vscode.window.showErrorMessage(`${drush.title} ` + exps);
 			}
-			if (stdout) {
+			if (stdout && !exps && !stderr) {
 				// Get drush version from command output.
 				drushVersion = stdout.split(':')[1].trim();
 				extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
 				extStatusBarItem.tooltip = `Drupal (${drush.title} ${drushVersion})`;
+				extStatusBarItem.show();
 			}
 		});
-		extStatusBarItem.show();
 
 		const disposable = vscode.commands.registerCommand(extDrushButtonId, function () {
 			// Change text while clearing cache.
