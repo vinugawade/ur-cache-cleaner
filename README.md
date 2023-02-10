@@ -60,7 +60,7 @@ Feel free to contribute in our [repository](https://github.com/vinugawade/ur-cac
 Built with 💛 by [Vinay Gawade](https://github.com/vinugawade).
 
 <a href="https://www.linkedin.com/in/vinu-gawade" target="_blank"><img src="assets/images/media/LinkedIn.png" alt="logo" width="150"></a>
-<a href="https://twitter.com/VinuGawade" target="_blank"><img src="assets/images/media/Bmc.png" alt="logo" width="150"></a>
+<a href="https://www.buymeacoffee.com/vinaygawade" target="_blank"><img src="assets/images/media/Bmc.png" alt="logo" width="150"></a>
 <a href="https://twitter.com/VinuGawade" target="_blank"><img src="assets/images/media/Twitter.png" alt="logo" width="150"></a>
 
 <a href="https://www.buymeacoffee.com/vinaygawade" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
