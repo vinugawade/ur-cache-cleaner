@@ -26,10 +26,8 @@ function clearCache(extStatusBarItem, drupalVersion, drushVersion) {
 			let output = stderr.trim();
 			if (output.includes('[success]')) {
 				vscode.window.showInformationMessage(successMsg);
-				console.log(successMsg);
 			} else {
 				vscode.window.showErrorMessage(`${title} error: ` + stderr);
-				console.log(stderr);
 			}
 			extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
 			extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${title} ${drushVersion})`;
@@ -38,7 +36,6 @@ function clearCache(extStatusBarItem, drupalVersion, drushVersion) {
 		if (exps) {
 			// Show exception & update values of status bar button.
 			vscode.window.showErrorMessage('Exception: ' + exps);
-			console.log(exps);
 			extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
 			extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${title} ${drushVersion})`;
 		}
@@ -46,7 +43,6 @@ function clearCache(extStatusBarItem, drupalVersion, drushVersion) {
 		if (stdout) {
 			// Show output & update values of status bar button.
 			vscode.window.showInformationMessage('stdout: ' + stdout);
-			console.log(stdout);
 			extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
 			extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${title} ${drushVersion})`;
 		}
