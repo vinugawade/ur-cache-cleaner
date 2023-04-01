@@ -8,5 +8,13 @@
 
 - Enables **Clear Cache** command's support for **DDEV** drupal project environment.
 - Fixed minor issues and added comments.
-- Updated the **Readme** file.
 - Removed extension from **Preview**.
+- Updated the **Readme** file.
+
+## 1.2.0 :-
+
+- Now displays more details about site in tooltip.
+- Action button will be not visible if **Drush** not found.
+- Updated output messages for end users.
+- Fixed minor issues and removed debugging code.
+- Updated the **Readme** file.
