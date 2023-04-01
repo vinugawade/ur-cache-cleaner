@@ -3,7 +3,7 @@ const vscode = require('vscode');
 const cmdRunner = require('child_process');
 const drush = require('./commands/drush/cmd');
 const check = require('./commands/check_cmd');
-var drushVersion;
+var drupalVersion, drushVersion;
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -20,7 +20,7 @@ function activate(context) {
 		extStatusBarItem.command = extDrushButtonId;
 		extStatusBarItem.name = `drush-clear-cache`;
 
-		cmdRunner.exec(drush.version, (exps, stdout, stderr) => {
+		cmdRunner.exec(drush.status, (exps, stdout, stderr) => {
 			if (stderr) {
 				// Show command error.
 				vscode.window.showErrorMessage(`${drush.title} error: ` + stderr);
@@ -30,10 +30,14 @@ function activate(context) {
 				vscode.window.showErrorMessage(`${drush.title} ` + exps);
 			}
 			if (stdout && !exps && !stderr) {
-				// Get drush version from command output.
-				drushVersion = stdout.split(':')[1].trim();
+				// Extract the version of Drupal and Drush from the output of the status command.
+				const drupal_expression = /Drupal version\s+:\s(([0-9]\.*){1,})/g;
+				const drush_expression = /Drush version\s+:\s(([0-9]\.*){1,})/g;
+				drupalVersion = drupal_expression.exec(stdout)[1];
+				drushVersion = drush_expression.exec(stdout)[1];
+
 				extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
-				extStatusBarItem.tooltip = `Drupal (${drush.title} ${drushVersion})`;
+				extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${drush.title} ${drushVersion})`;
 				extStatusBarItem.show();
 			}
 		});
@@ -43,7 +47,7 @@ function activate(context) {
 			extStatusBarItem.text = `$(sync~spin)  Clearing Cache`;
 			extStatusBarItem.tooltip = `Working on...`;
 			// Execute clear cache command.
-			drush.clearCache(extStatusBarItem, drushVersion);
+			drush.clearCache(extStatusBarItem, drupalVersion, drushVersion);
 		});
 
 		context.subscriptions.push(disposable);

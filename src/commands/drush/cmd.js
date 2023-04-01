@@ -6,15 +6,16 @@ const fs = require('fs');
 const title = "Drush";
 const name = "drush";
 const root = vscode.workspace.rootPath;
-const version = name + ' version --root=' + root;
+const status = name + ' status --root=' + root;
 const successMsg = "Cache rebuild completed.";
 var cacheRebuild = "drush > /dev/null";
 
 /**
  * @param {object} extStatusBarItem
+ * @param {string} drupalVersion
  * @param {string} drushVersion
  */
-function clearCache(extStatusBarItem, drushVersion) {
+function clearCache(extStatusBarItem, drupalVersion, drushVersion) {
 
 	// Modify command if it's running in ddev environment.
 	cacheRebuild = checkDdevEnv(cacheRebuild);
@@ -31,7 +32,7 @@ function clearCache(extStatusBarItem, drushVersion) {
 				console.log(stderr);
 			}
 			extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
-			extStatusBarItem.tooltip = `Drupal (${title} ${drushVersion})`;
+			extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${title} ${drushVersion})`;
 		}
 
 		if (exps) {
@@ -39,7 +40,7 @@ function clearCache(extStatusBarItem, drushVersion) {
 			vscode.window.showErrorMessage('Exception: ' + exps);
 			console.log(exps);
 			extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
-			extStatusBarItem.tooltip = `Drupal (${title} ${drushVersion})`;
+			extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${title} ${drushVersion})`;
 		}
 
 		if (stdout) {
@@ -47,7 +48,7 @@ function clearCache(extStatusBarItem, drushVersion) {
 			vscode.window.showInformationMessage('stdout: ' + stdout);
 			console.log(stdout);
 			extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
-			extStatusBarItem.tooltip = `Drupal (${title} ${drushVersion})`;
+			extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${title} ${drushVersion})`;
 		}
 	});
 }
@@ -70,7 +71,7 @@ module.exports = {
 	title,
 	name,
 	root,
-	version,
+	status,
 	clearCache,
 	checkDdevEnv
 }
