@@ -6,68 +6,55 @@ const fs = require('fs');
 const title = "Drush";
 const name = "drush";
 const root = vscode.workspace.rootPath;
-const status = name + ' status --root=' + root;
 const successMsg = "Cache rebuild completed.";
-var cacheRebuild = "drush > /dev/null";
+
+let cacheRebuild = checkDdevEnv() ? 'ddev drush cr' : `${root}/vendor/bin/${name} cr`;
+let status = checkDdevEnv() ? 'ddev drush status' : `${root}/vendor/bin/${name} status`;
 
 /**
- * @param {object} extStatusBarItem
- * @param {string} drupalVersion
- * @param {string} drushVersion
+ * Clears the cache and updates the status bar item.
+ * @param {object} extStatusBarItem - The extension status bar item.
+ * @param {string} drupalVersion - The Drupal version.
+ * @param {string} drushVersion - The Drush version.
  */
 function clearCache(extStatusBarItem, drupalVersion, drushVersion) {
-
-	// Modify command if it's running in ddev environment.
-	cacheRebuild = checkDdevEnv(cacheRebuild);
-
 	cmdRunner.exec(cacheRebuild, (exps, stdout, stderr) => {
 		if (stderr) {
-			// Show success output & update values of status bar button.
 			let output = stderr.trim();
 			if (output.includes('[success]')) {
 				vscode.window.showInformationMessage(successMsg);
 			} else {
-				vscode.window.showErrorMessage(`${title} error: ` + stderr);
+				vscode.window.showErrorMessage(`${title} error: ${stderr}`);
 			}
-			extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
-			extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${title} ${drushVersion})`;
 		}
 
 		if (exps) {
-			// Show exception & update values of status bar button.
 			vscode.window.showErrorMessage('Exception: ' + exps);
-			extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
-			extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${title} ${drushVersion})`;
 		}
 
 		if (stdout) {
-			// Show output & update values of status bar button.
 			vscode.window.showInformationMessage('stdout: ' + stdout);
-			extStatusBarItem.text = `$(clear-cache)  Clear Cache`;
-			extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${title} ${drushVersion})`;
 		}
+
+		// Update the status bar item with cache clear information.
+		extStatusBarItem.text = `$(clear-cache) Clear Cache`;
+		extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${title} ${drushVersion})`;
 	});
 }
 
 /**
- * @param {string} cacheRebuildCmd
+ * Checks if the workspace is running in ddev environment.
+ * @returns {boolean} - Returns true if ddev environment is detected, false otherwise.
  */
-function checkDdevEnv(cacheRebuildCmd) {
-	// Check .ddev directory exist or not in workspace.
-	var ddev_config = root + '/.ddev'
-	if (fs.existsSync(ddev_config)) {
-		cacheRebuildCmd = `ddev ` + name + ` cr`;
-	} else {
-		cacheRebuildCmd = name + ' cr --root=' + root;
-	}
-	return cacheRebuildCmd;
+function checkDdevEnv() {
+	return fs.existsSync(`${root}/.ddev`);
 }
 
 module.exports = {
-	title,
-	name,
-	root,
-	status,
-	clearCache,
-	checkDdevEnv
-}
+	title, // Drupal site title
+	name, // Drush command name
+	root, // Workspace root path
+	status, // Drush command status
+	clearCache, // Function to clear the cache
+	checkDdevEnv // Function to check if ddev environment is detected
+};
