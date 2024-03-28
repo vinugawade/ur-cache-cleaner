@@ -81,11 +81,20 @@
       {
         "command": "ur-cache-cleaner.drushClearCache",
         "title": "Drush Clear Cache"
+      },
+      {
+        "command": "ur-cache-cleaner.wpClearCache",
+        "title": "WP Clear Cache"
       }
     ],
     "keybindings": [
       {
         "command": "ur-cache-cleaner.drushClearCache",
+        "key": "ctrl+shift+c ctrl+shift+r",
+        "mac": "cmd+shift+c cmd+shift+r"
+      },
+      {
+        "command": "ur-cache-cleaner.wpClearCache",
         "key": "ctrl+shift+c ctrl+shift+r",
         "mac": "cmd+shift+c cmd+shift+r"
       }
