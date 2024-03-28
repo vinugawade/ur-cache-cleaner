@@ -9,6 +9,6 @@ exports.command = (cmd) => {
   if (commandExists(cmd.name)) {
     return true;
   } else {
-    return "Drush launcher is not installed. Please install it globally on your system.";
+    return `${cmd.name} is not installed. Please install it globally on your system.`;
   }
 };

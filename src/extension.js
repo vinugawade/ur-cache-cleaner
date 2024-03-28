@@ -1,7 +1,9 @@
 // The module 'vscode' contains the VS Code extensibility API
+const fs = require('fs');
 const vscode = require('vscode');
 const cmdRunner = require('child_process');
 const drush = require('./commands/drush/cmd');
+const wp = require('./commands/wp/cmd');
 const check = require('./commands/check_cmd');
 var drupalVersion, drushVersion;
 

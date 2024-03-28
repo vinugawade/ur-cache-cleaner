@@ -21,7 +21,8 @@
   ],
   "preview": false,
   "activationEvents": [
-    "workspaceContains:**/composer.json"
+    "workspaceContains:**/composer.json",
+    "workspaceContains:**/wp-config.php"
   ],
   "main": "./src/extension.js",
   "contributes": {
