@@ -1,9 +1,13 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
-labels: ''
+title: "[BUG]: (Briefly summarize the issue here)"
+labels: bug, help wanted
 assignees: ''
+
+---
+
+Here's the bug report template tailored for your VS Code extension:
 
 ---
 
@@ -12,27 +16,23 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+1. Open VS Code.
+2. Navigate to the UR Cache Cleaner extension.
+3. Perform specific actions or operations.
+4. Encounter the bug/error.
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem.
+If applicable, add screenshots to help explain the problem.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+**VS Code Version:**
+ - Version: [e.g. 1.60.2]
+ - OS: [e.g. macOS, Linux]
 
 **Additional context**
-Add any other context about the problem here.
+Add any other context about the problem here, such as:
+- Any relevant configurations set in VS Code or the extension.
+- Any error messages or logs displayed in the VS Code output panel.
+- Any specific environment details that might be relevant to reproducing or understanding the issue.
