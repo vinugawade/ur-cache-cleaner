@@ -7,3 +7,7 @@ vsc-extension-quickstart.md
 **/jsconfig.json
 **/*.map
 **/.eslintrc.json
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+SECURITY.md
+.github/**
