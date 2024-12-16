@@ -18,13 +18,13 @@ To contribute to UR Cache Cleaner, follow these steps:
 
 2. **Clone Your Fork**: Clone your forked repository to your local machine using the following command:
 
-   ```
+   ```shell
    git clone https://github.com/vinugawade/ur-cache-cleaner.git
    ```
 
 3. **Create a Branch**: Create a new branch for your changes with a descriptive name:
 
-   ```
+   ```shell
    git checkout -b feature/my-new-feature
    ```
 
@@ -32,13 +32,13 @@ To contribute to UR Cache Cleaner, follow these steps:
 
 5. **Commit Changes**: Commit your changes with clear and concise commit messages:
 
-   ```
+   ```shell
    git commit -am 'Add new feature: my new feature'
    ```
 
 6. **Push Changes**: Push your changes to your forked repository:
 
-   ```
+   ```shell
    git push origin feature/my-new-feature
    ```
 

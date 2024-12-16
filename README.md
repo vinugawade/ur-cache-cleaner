@@ -53,30 +53,6 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
-## Release Notes ✨
-
-### v1.0.0
-
-- Introduces the **Clear Cache** command of **Drush** for use in Drupal projects. This feature is currently supported only on **Linux/Mac OS**.
-
-### v1.1.0
-
-- Adds support for the **Clear Cache** command in **DDEV** Drupal project environments.
-- Fixes minor issues and adds comments for improved clarity.
-
-### v1.2.0
-
-- Enhances the tooltip to display additional site details.
-- Addresses minor issues for improved performance.
-
-### v1.3.0
-
-- Adds support for **drush v12**.
-- Fixes the issues reported in [#1](https://github.com/vinugawade/ur-cache-cleaner/issues/1) by [@elgandoz](https://github.com/elgandoz).
-- Refactors the code for better maintainability and readability.
-
----
-
 ## Contributors ✨
 
 We welcome contributions to our [repository](https://github.com/vinugawade/ur-cache-cleaner). Feel free to contribute and help make **UR Cache Cleaner** even better.
