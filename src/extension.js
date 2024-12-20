@@ -1,6 +1,6 @@
 const vscode = require('vscode');
 const { checkActiveEnv } = require('./utils/envChecker');
-const { registerButtons } = require('./commands/registerButtons');
+const { registerButtons } = require('./utils/registerButtons');
 
 /**
  * Activate the extension when the VS Code instance starts.

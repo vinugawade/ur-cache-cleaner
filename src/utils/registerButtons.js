@@ -1,6 +1,6 @@
 const vscode = require('vscode');
-const { executeClearCacheCommand } = require('./drush/cr');
-const { createStatusBarItem } = require('../utils/statusBar');
+const { executeClearCacheCommand } = require('../commands/drush/cr');
+const { createStatusBarItem } = require('./statusBar');
 
 /**
  * Registers multiple buttons for different commands in the status bar.
