@@ -1,72 +1,33 @@
-// The module 'vscode' contains the VS Code extensibility API
 const vscode = require('vscode');
-const cmdRunner = require('child_process');
-const drush = require('./commands/drush/cmd');
-const check = require('./commands/check_cmd');
-var drupalVersion, drushVersion;
+const { checkActiveEnv } = require('./utils/envChecker');
+const { registerButtons } = require('./commands/registerButtons');
 
 /**
  * Activate the extension when the VS Code instance starts.
  * @param {vscode.ExtensionContext} context - The extension context.
  */
 function activate(context) {
-	// Create a new status bar item that we can now manage.
-	const extStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
-	const result = check.command(drush);
+	const workspaceFolders = vscode.workspace.workspaceFolders;
 
-	if (typeof (result) !== 'string') {
-		// Assign values of status bar button.
-		const extDrushButtonId = 'ur-cache-cleaner.drushClearCache';
-		extStatusBarItem.command = extDrushButtonId;
-		extStatusBarItem.name = 'drush-clear-cache';
+	if (!workspaceFolders || workspaceFolders.length === 0) {
+		// No workspace folder is open.
+		return;
+	}
 
-		cmdRunner.exec(drush.status, (exps, stdout, stderr) => {
+	const workspacePath = workspaceFolders[0].uri.fsPath;
 
-			if (stderr) {
-				// Show command error.
-				vscode.window.showErrorMessage(`${drush.title} error: ${stderr}`);
-			}
+	// Determine the active tool
+	const activeTool = checkActiveEnv(workspacePath);
 
-			if (exps) {
-				// Show command exception.
-				vscode.window.showErrorMessage(`${drush.title} ${exps}`);
-			}
-
-			if (stdout && !exps && !stderr) {
-				// Extract the version of Drupal and Drush from the output of the status command.
-				const drupal_expression = /Drupal version\s+:\s(([0-9]\.*){1,})/g;
-				const drush_expression = /Drush version\s+:\s(([0-9]\.*){1,})/g;
-				drupalVersion = drupal_expression.exec(stdout)[1];
-				drushVersion = drush_expression.exec(stdout)[1];
-
-				extStatusBarItem.text = '$(clear-cache)  Clear Cache';
-				extStatusBarItem.tooltip = `Drupal ${drupalVersion} (${drush.title} ${drushVersion})`;
-				extStatusBarItem.show();
-			}
-		});
-
-		const disposable = vscode.commands.registerCommand(extDrushButtonId, function () {
-			// Change text while clearing cache.
-			extStatusBarItem.text = '$(sync~spin)  Clearing Cache';
-			extStatusBarItem.tooltip = 'Working on...';
-			// Execute clear cache command.
-			drush.clearCache(extStatusBarItem, drupalVersion, drushVersion);
-		});
-
-		context.subscriptions.push(disposable);
-		context.subscriptions.push(extStatusBarItem);
-	} else {
-		// Show command not found error message.
-		vscode.window.showErrorMessage(result);
+	// If an active tool is found, create the status bar item and commands
+	if (activeTool) {
+		registerButtons(context, activeTool, workspacePath);
 	}
 }
 
-/**
- * Deactivates the extension.
- */
 function deactivate() { }
 
 module.exports = {
 	activate,
-	deactivate
+	deactivate,
 };

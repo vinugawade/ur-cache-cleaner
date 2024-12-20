@@ -21,7 +21,10 @@
   ],
   "preview": false,
   "activationEvents": [
-    "workspaceContains:**/composer.json"
+    "workspaceContains:**/composer.json",
+    "workspaceContains:**/.ddev/config.yaml",
+    "workspaceContains:**/.lando.yml",
+    "onStartupFinished"
   ],
   "main": "./src/extension.js",
   "contributes": {
@@ -64,13 +67,13 @@
     },
     "commands": [
       {
-        "command": "ur-cache-cleaner.drushClearCache",
+        "command": "drush-clear-cache",
         "title": "Drush Clear Cache"
       }
     ],
     "keybindings": [
       {
-        "command": "ur-cache-cleaner.drushClearCache",
+        "command": "drush-clear-cache",
         "key": "ctrl+shift+c ctrl+shift+r",
         "mac": "cmd+shift+c cmd+shift+r"
       }
