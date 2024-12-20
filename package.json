@@ -26,53 +26,39 @@
   "main": "./src/extension.js",
   "contributes": {
     "icons": {
-      "clear-cache": {
-        "description": "Clear cache icon",
+      "drupal-icon": {
+        "description": "Drupal",
         "default": {
-          "fontPath": "./assets/icons/fonts/ur-font.woff",
-          "fontCharacter": "\\43"
-        }
-      },
-      "loading-icon": {
-        "description": "Loading icon",
-        "default": {
-          "fontPath": "./assets/icons/fonts/ur-font.woff",
-          "fontCharacter": "\\4f"
-        }
-      },
-      "info-icon": {
-        "description": "Info icon",
-        "default": {
-          "fontPath": "./assets/icons/fonts/ur-font.woff",
-          "fontCharacter": "\\49"
-        }
-      },
-      "apple-icon": {
-        "description": "Apple system icon",
-        "default": {
-          "fontPath": "./assets/icons/fonts/ur-font.woff",
+          "fontPath": "./assets/icons/fonts/ur-icons.woff",
           "fontCharacter": "\\41"
         }
       },
-      "unix-icon": {
-        "description": "Unix system icon",
+      "ddev-icon": {
+        "description": "DDEV",
         "default": {
-          "fontPath": "./assets/icons/fonts/ur-font.woff",
-          "fontCharacter": "\\75"
+          "fontPath": "./assets/icons/fonts/ur-icons.woff",
+          "fontCharacter": "\\42"
         }
       },
-      "windows-icon": {
-        "description": "Wiindows system icon",
+      "lando-icon": {
+        "description": "Lando",
         "default": {
-          "fontPath": "./assets/icons/fonts/ur-font.woff",
-          "fontCharacter": "\\77"
+          "fontPath": "./assets/icons/fonts/ur-icons.woff",
+          "fontCharacter": "\\43"
         }
       },
-      "code-icon": {
-        "description": "Code icon",
+      "wordpress-icon": {
+        "description": "Wordpress",
         "default": {
-          "fontPath": "./assets/icons/fonts/ur-font.woff",
-          "fontCharacter": "\\48"
+          "fontPath": "./assets/icons/fonts/ur-icons.woff",
+          "fontCharacter": "\\44"
+        }
+      },
+      "civicrm-icon": {
+        "description": "CiviCRM",
+        "default": {
+          "fontPath": "./assets/icons/fonts/ur-icons.woff",
+          "fontCharacter": "\\45"
         }
       }
     },
