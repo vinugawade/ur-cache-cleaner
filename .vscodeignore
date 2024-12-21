@@ -11,3 +11,8 @@ CODE_OF_CONDUCT.md
 CONTRIBUTING.md
 SECURITY.md
 .github/**
+assets/images/logo-transparent.png
+assets/images/feature.gif
+assets/icons/svg/**
+assets/images/media/**
+cliff.toml

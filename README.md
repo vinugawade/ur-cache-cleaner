@@ -29,7 +29,7 @@ Experience the convenience and efficiency of **UR Cache Cleaner** in managing ca
 
 When you open a Drupal project, you will find the "Clear Cache" button located on the left side of the Status Bar.
 
-![Clear Your Cache](assets/images/feature.gif)
+![Clear Your Cache](https://raw.githubusercontent.com/vinugawade/ur-cache-cleaner/9ae355cc3bad9143ec498540c901a4ee35b11c0b/assets/images/feature.gif)
 
 ---
 
