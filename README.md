@@ -10,7 +10,7 @@
 
 **UR Cache Cleaner** is a powerful VS Code extension designed specifically for drupal projects. It offers the following features:
 
-- **Cache Clearing:** With just a single click of a button, you can easily clear the cache of your drupal project without the need to switch to the admin panel or terminal.
+- **Cache Clearing:** With just a single click of a button, you can easily clear the cache of your Drupal/CiviCRM project without the need to switch to the admin panel or terminal.
 
 - **Efficiency:** UR Cache Cleaner streamlines the cache clearing process, saving you time and effort by eliminating the need to navigate through different panels or tools.
 
@@ -24,18 +24,36 @@ Experience the convenience and efficiency of **UR Cache Cleaner** in managing ca
 
 ### Shortcut keys ✨
 
-- Mac: **⇧+⌘+C ⇧+⌘+R**
-- Linux: **Ctrl+Shift+C Ctrl+Shift+R**
+> Drupal Cache Clear
 
-When you open a Drupal project, you will find the "Clear Cache" button located on the left side of the Status Bar.
+- Mac: **⇧+⌘+C, ⇧+⌘+R**
+- Linux: **Ctrl+Shift+C, Ctrl+Shift+R**
 
-![Clear Your Cache](https://raw.githubusercontent.com/vinugawade/ur-cache-cleaner/9ae355cc3bad9143ec498540c901a4ee35b11c0b/assets/images/feature.gif)
+> CiviCRM Cache Clear
+
+- Mac: **⇧+⌘+C, ⇧+⌘+C**
+- Linux: **Ctrl+Shift+C, Ctrl+Shift+C**
+
+When you open a Drupal project, you will find the `Clear Cache` & `CiviCRM Clear Cache` button located on the left side of the Status Bar.
+
+![Clear Drupal Cache](https://raw.githubusercontent.com/vinugawade/ur-cache-cleaner/refs/heads/master/assets/images/feature.gif)
 
 ---
 
 ## Requirements ✨
 
-To utilize UR Cache Cleaner, please ensure you have installed [Drush Launcher](https://github.com/drush-ops/drush-launcher) on your system.
+To utilize UR Cache Cleaner, please ensure you have installed below packages/tools in your project.
+> Drush (Drupal)
+
+```shell
+composer require drush/drush
+```
+
+> CV (CiviCRM)
+
+```shell
+composer require civicrm/cli-tools
+```
 
 ---
 
@@ -75,7 +93,7 @@ Your support and feedback are valuable in maintaining and improving the extensio
 
 ## Credits ✨
 
-The logo for **UR Cache Cleaner** was generated using the free logo designer [DesignEvo](https://www.designevo.com), while the icons were provided by [glyphter](https://glyphter.com/), a free icon font pack.
+The logo for **UR Cache Cleaner** was generated using the free logo designer [Renderforest](https://www.renderforest.com), while the icons pack created by [glyphter](https://glyphter.com/), a free icon font pack.
 
 ---
 
