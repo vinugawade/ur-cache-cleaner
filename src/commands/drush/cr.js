@@ -1,6 +1,6 @@
 const { exec } = require('child_process');
 const path = require('path');
-const { FILE_NAMES, TOOL_TYPES, DRUSH_CMD } = require('../../constants');
+const { FILE_NAMES, TOOL_TYPES, CMS_CMD } = require('../../constants');
 
 /**
  * Executes the cache clear command based on the active tool.
@@ -15,15 +15,15 @@ function executeClearCacheCommand(activeTool, workspacePath) {
 
     switch (activeTool) {
       case TOOL_TYPES.DRUPAL:
-        command = `${path.join(workspacePath, FILE_NAMES.DRUSH_EXECUTABLE)} ` + DRUSH_CMD.CACHE;
+        command = `${path.join(workspacePath, FILE_NAMES.DRUSH_EXECUTABLE.replace('drush', CMS_CMD.DRUSH_CACHE))}`;
         break;
 
       case TOOL_TYPES.DDEV:
-        command = 'ddev drush ' + DRUSH_CMD.CACHE;
+        command = 'ddev ' + CMS_CMD.DRUSH_CACHE;
         break;
 
       case TOOL_TYPES.LANDO:
-        command = 'lando drush ' + DRUSH_CMD.CACHE;
+        command = 'lando ' + CMS_CMD.DRUSH_CACHE;
         break;
 
       default:

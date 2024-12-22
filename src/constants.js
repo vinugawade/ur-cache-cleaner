@@ -11,8 +11,8 @@ const TOOL_TYPES = {
 	DDEV: 'ddev',
 };
 
-const DRUSH_CMD = {
-	CACHE: 'cr',
+const CMS_CMD = {
+	DRUSH_CACHE: 'drush cr',
 };
 
-module.exports = { TOOL_TYPES, FILE_NAMES, DRUSH_CMD };
+module.exports = { TOOL_TYPES, FILE_NAMES, CMS_CMD };
