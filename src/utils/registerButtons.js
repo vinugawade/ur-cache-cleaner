@@ -73,17 +73,13 @@ async function executeCommand(commandName, executeCommandFunction, activeTool, w
 
 		// Record the end time
 		const endTime = performance.now();
-		const executionTime = (endTime - startTime).toFixed(2);
+		const executionTime = ((endTime - startTime) / 1000).toFixed(2);
 
 		// Show the output with the execution time
-		vscode.window.showInformationMessage(`${executionTime}ms: ${output}`);
+		vscode.window.showInformationMessage(`${executionTime}s: ${output}`);
 	} catch (error) {
-		// Record the end time in case of error as well
-		const endTime = performance.now();
-		const executionTime = (endTime - startTime).toFixed(2);
-
 		// Show an error message with execution time
-		vscode.window.showErrorMessage(`Failed to execute ${commandName} after ${executionTime}ms:\n${error.message}`);
+		vscode.window.showErrorMessage(`Failed to execute ${commandName}`);
 	}
 }
 
