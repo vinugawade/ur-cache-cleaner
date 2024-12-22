@@ -69,6 +69,10 @@
       {
         "command": "drush-clear-cache",
         "title": "Drush Clear Cache"
+      },
+      {
+        "command": "civicrm-clear-cache",
+        "title": "CiviCRM Clear Cache"
       }
     ],
     "keybindings": [
@@ -76,6 +80,11 @@
         "command": "drush-clear-cache",
         "key": "ctrl+shift+c ctrl+shift+r",
         "mac": "cmd+shift+c cmd+shift+r"
+      },
+      {
+        "command": "civicrm-clear-cache",
+        "key": "ctrl+shift+c ctrl+shift+c",
+        "mac": "cmd+shift+c cmd+shift+c"
       }
     ]
   },
