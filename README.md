@@ -20,7 +20,6 @@
 
 Experience the convenience and efficiency of **UR Cache Cleaner** in managing cache clearing for your drupal projects. Upgrade your workflow and enhance productivity with this powerful VS Code extension.
 
----
 
 ### Shortcut keys ✨
 
@@ -34,11 +33,10 @@ Experience the convenience and efficiency of **UR Cache Cleaner** in managing ca
 - Mac: **⇧+⌘+C, ⇧+⌘+C**
 - Linux: **Ctrl+Shift+C, Ctrl+Shift+C**
 
-When you open a Drupal project, you will find the `Clear Cache` & `CiviCRM Clear Cache` button located on the left side of the Status Bar.
+When you open a `Drupal` project, you will find the `Clear Cache` & `CiviCRM Clear Cache` button located on the **Bottom-Left** side of the Status Bar.
 
 ![Clear Drupal Cache](https://raw.githubusercontent.com/vinugawade/ur-cache-cleaner/refs/heads/master/assets/images/feature.gif)
 
----
 
 ## Requirements ✨
 
@@ -55,7 +53,6 @@ composer require drush/drush
 composer require civicrm/cli-tools
 ```
 
----
 
 ## Known Issues ✨
 
@@ -63,19 +60,16 @@ Please note that UR Cache Cleaner is not currently compatible with Windows OS. W
 
 We encourage you to report any issues you encounter on our [repository](https://github.com/vinugawade/ur-cache-cleaner/issues). Your feedback and contributions are highly appreciated.
 
----
 
 ## Changelog ✨
 
 See [CHANGELOG.md](CHANGELOG.md).
 
----
 
 ## Contributors ✨
 
 We welcome contributions to our [repository](https://github.com/vinugawade/ur-cache-cleaner). Feel free to contribute and help make **UR Cache Cleaner** even better.
 
----
 
 ## Maintainer ✨
 
@@ -89,13 +83,11 @@ Your support and feedback are valuable in maintaining and improving the extensio
 
 <a href="https://www.buymeacoffee.com/vinaygawade" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
----
 
 ## Credits ✨
 
 The logo for **UR Cache Cleaner** was generated using the free logo designer [Renderforest](https://www.renderforest.com), while the icons pack created by [glyphter](https://glyphter.com/), a free icon font pack.
 
----
 
 ## License ✨
 
