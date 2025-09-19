@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.4.1] - 2025-09-20
+
+### 🚀 Features
+
+- **VSCode Server** support: now extension can detect vscode environments and look for commands accordingly.
+
 ## [v1.4.0] - 2024-12-22
 
 ### 🚀 Features
