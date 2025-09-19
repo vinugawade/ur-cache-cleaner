@@ -17,7 +17,7 @@ function activate(context) {
 	const workspacePath = workspaceFolders[0].uri.fsPath;
 
 	// Determine the active tool
-	const activeTool = checkActiveEnv(workspacePath);
+	const activeTool = checkActiveEnv(workspacePath, vscode);
 
 	// If an active tool is found, create the status bar item and commands
 	if (activeTool) {
