@@ -35,15 +35,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Next.js site
+      - name: Build static Next.js site
         run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /
 
-      - name: Move build output to root for GitHub Pages
+      - name: Prepare artifact
         run: |
           mkdir -p ../out
-          cp -r docs/out/* ../out/ || cp -r out/* ../out/ || true
+          if [ -d "out" ]; then
+            cp -r out/* ../out/
+          elif [ -d ".next/export" ]; then
+            cp -r .next/export/* ../out/
+          else
+            echo "⚠️ No static export folder found!"
+            ls -la
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

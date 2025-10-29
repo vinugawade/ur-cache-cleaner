@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig = {
-  output: 'export',              // Enables static export automatically on build
+  output: 'export', // Required for static export build
   images: { unoptimized: true },
-  basePath: isProd ? '/ur-cache-cleaner' : '',
-  assetPrefix: isProd ? '/ur-cache-cleaner/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/ur-cache-cleaner' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/ur-cache-cleaner/' : '',
 };
 
 export default nextConfig;
