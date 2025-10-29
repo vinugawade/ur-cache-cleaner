@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig = {
   output: 'export',
   images: { unoptimized: true },
-  basePath: process.env.NODE_ENV === 'production' ? '/ur-cache-cleaner' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/ur-cache-cleaner/' : '',
+  basePath: '/ur-cache-cleaner',
+  assetPrefix: '/ur-cache-cleaner/',
+  distDir: 'out',
+  trailingSlash: true,
 };
 
 export default nextConfig;
