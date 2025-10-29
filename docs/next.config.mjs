@@ -2,9 +2,7 @@
 const nextConfig = {
   output: 'export',
   images: { unoptimized: true },
-  basePath: '/ur-cache-cleaner',
-  assetPrefix: '/ur-cache-cleaner/',
-  distDir: 'out',
+  assetPrefix: './',
   trailingSlash: true,
 };
 
