@@ -73,7 +73,9 @@ We welcome contributions to our [repository](https://github.com/vinugawade/ur-ca
 
 ## Maintainer ✨
 
-**UR Cache Cleaner** is built with 💛 by [Vinay Gawade](https://github.com/vinugawade).
+**UR Cache Cleaner** is built with 💛 by [Vinay Gawade](https://vinay.is-a.dev).
+
+Our **UR Cache Cleaner** [landing page](https://ucc.vinux.in) is built with 💛 by [Preeti Yadav](https://www.linkedin.com/in/preeti-yadav5443).
 
 Your support and feedback are valuable in maintaining and improving the extension.
 
