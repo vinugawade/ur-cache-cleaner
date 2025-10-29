@@ -36,16 +36,14 @@ jobs:
         run: npm ci
 
       - name: Build Next.js site
-        run: |
-          npm run build
-          npm run export
+        run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /
 
       - name: Move build output to root for GitHub Pages
         run: |
           mkdir -p ../out
-          cp -r out/* ../out/
+          cp -r docs/out/* ../out/ || cp -r out/* ../out/ || true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
