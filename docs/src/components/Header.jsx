@@ -12,7 +12,7 @@ const Header = () => {
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                            <Image src="/logo-icon.png" alt='logo' width={40} height={40} unoptimized />
+                            <Image src="logo-icon.png" alt='logo' width={40} height={40} unoptimized />
                         </div>
                         <div>
                             <h1 className="text-xl font-semibold">UR Cache Cleaner</h1>
